@@ -1,4 +1,4 @@
-package main
+package ExampleFileRead
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	diskfs "github.com/diskfs/go-diskfs"
 )
 
-func ReadFilesystem(p string) {
+func ExampleFileRead(p string) {
 	disk, err := diskfs.Open(p)
 	if err != nil {
 		log.Panic(err)
@@ -21,9 +21,4 @@ func ReadFilesystem(p string) {
 		log.Panic(err)
 	}
 	fmt.Println(files)
-}
-
-func main() {
-	fmt.Println("Hello World")
-	ReadFilesystem("/dev/disk3")
 }
